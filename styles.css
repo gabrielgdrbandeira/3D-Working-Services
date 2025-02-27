@@ -1,0 +1,659 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #161515;
+  position: relative;
+  z-index: 10;
+}
+
+.banner {
+  margin-top: 1px; /* Ajuste conforme necessário */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.company-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f16627;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: #f16627;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #f16627;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link:active::after {
+  width: 100%;
+}
+
+/* Configuração do Banner */
+.banner {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+}
+
+/* Lado esquerdo do banner (fundo preto) */
+.banner-left {
+  width: 60%;
+  background-color: #161515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Conteúdo do banner (texto) */
+.banner-content {
+  max-width: 700px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+/* Lado direito do banner (fundo laranja) */
+.banner-right {
+  width: 40%;
+  background-color: #f16627;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Criando o quadrado branco no centro do lado direito */
+.banner-box {
+  background-color: #ffffff;
+  width: 80%;
+  max-width: 500px;
+  aspect-ratio: 1; /* Mantém um quadrado perfeito */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajuste da imagem dentro do quadrado */
+.banner-box img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
+/* Ajuste do Banner para responsividade */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column; /* Faz as colunas ficarem empilhadas */
+    height: auto;
+  }
+
+  .banner-left,
+  .banner-right {
+    width: 100%; /* Faz os dois blocos ocuparem a largura total */
+    height: auto;
+    padding: 20px; /* Adiciona um espaçamento interno */
+  }
+
+  .banner-content {
+    max-width: 100%; /* Permite que o conteúdo se adapte à tela */
+    text-align: center;
+    padding: 15px;
+  }
+
+  .banner-box {
+    width: 100%;
+    max-width: 350px; /* Limita o tamanho da imagem */
+    aspect-ratio: unset; /* Remove a restrição de proporção fixa */
+  }
+
+  .banner-box img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+/* Estilos do título e descrição */
+.banner-content h1 {
+  font-size: 60px; /* Tamanho maior para destaque */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Aumentando o parágrafo */
+.banner-content p {
+  font-size: 30px; /* Deixa o texto mais legível */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Botão de chamada para ação (CTA) */
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #f16627;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 25px;
+}
+
+.cta-button:hover {
+  background-color: #d45520;
+}
+
+/* Seção de Serviços */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #f16627;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: center;
+}
+
+.service-card img {
+  width: 30%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #555;
+  color: #ffffff;
+}
+
+/* Seção Quem Somos */
+.about {
+  padding: 50px 20px;
+  background-color: #161515;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Texto */
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #f16627;
+}
+
+.about-text p {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Foto do Gabriel */
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 80%;
+  border-radius: 50%; /* Torna a imagem redonda */
+  border: 4px solid #f16627; /* Adiciona uma borda laranja para destacar */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+/* Estilização da seção FAQ */
+.faq {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #161515;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Container das perguntas */
+.faq-container {
+  border-top: 2px solid #ddd;
+}
+
+/* Cada pergunta */
+.faq-item {
+  border-bottom: 2px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  background: #f9f9f9;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.faq-icon {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Resposta escondida */
+.faq-answer {
+  display: none;
+  padding: 15px;
+  background: #ffffff;
+  font-size: 16px;
+}
+
+/* Quando ativa (aberta) */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question {
+  background: #e0e0e0;
+}
+
+/* Rodapé */
+footer {
+  background-color: #161515;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 20px; /* Adiciona espaçamento entre as imagens */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+footer .social-media a img {
+    max-width: 30px; /* Ajuste para tamanho fixo melhor */
+    transition: transform 0.3s ease-in-out;
+}
+
+footer .social-media a img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilização da Página de Contato */
+.contact-page {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #161515;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.contact-page h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.contact-page p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Container para organizar o formulário e informações de contato */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Estilo do Formulário */
+.contact-form {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  background: #161515;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+/* Botão de envio */
+.contact-button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f16627;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #d45520;
+}
+
+/* Informações de Contato */
+.contact-info {
+  flex: 1;
+  max-width: 350px;
+  text-align: left;
+}
+
+/* Estilo da Logo no Contato */
+.contact-logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-logo img {
+  width: 300px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+/* Títulos e Links */
+.contact-info h3 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.contact-info p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.contact-info a {
+  color: #f16627;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+}
+
+/* Seção Projetos */
+.projects {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #161515;
+  color: #ffffff;
+}
+
+.projects h2 {
+  padding-bottom: 20px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #f16627;
+}
+
+/* Estilização das categorias */
+.project-category {
+  margin-bottom: 50px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.project-category h3 {
+  font-size: 26px;
+  color: #f16627;
+  margin-bottom: 10px;
+}
+
+.project-category p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Galeria de imagens */
+.project-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-gallery img {
+  max-width: 80%;
+  transition: transform 0.3s ease-in-out;
+  padding: 40px;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .project-gallery img {
+    max-width: 100%;
+  }
+}
+
+/* Chamada para Ação */
+.cta {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f16627; /* Fundo laranja para destacar */
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.cta h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Botões da CTA */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-buttons a {
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.whatsapp-button {
+  background-color: #25d366; /* Verde WhatsApp */
+  color: #ffffff;
+}
+
+.whatsapp-button:hover {
+  background-color: #1da851;
+}
+
+.instagram-button {
+  background-color: #e1306c; /* Rosa Instagram */
+  color: #ffffff;
+}
+
+.instagram-button:hover {
+  background-color: #c42d5b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
