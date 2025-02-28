@@ -24,7 +24,7 @@ header {
 }
 
 .banner {
-  margin-top: 1px; /* Ajuste conforme necessário */
+  margin-top: 1px; 
 }
 
 .logo-container {
@@ -85,6 +85,11 @@ nav ul {
 }
 
 /* Configuração do Banner */
+
+.banner {
+  margin-top: 1px; 
+}
+
 .banner {
   display: flex;
   height: 90vh;
@@ -655,5 +660,47 @@ footer .social-media a img:hover {
   .cta-buttons a {
     width: 100%;
     text-align: center;
+  }
+}
+
+/* Responsividade para o cabeçalho */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+    padding: 10px 20px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    width: 50px; /* Ajuste para tamanho proporcional */
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .company-name {
+    font-size: 18px; /* Reduz para telas menores */
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    font-size: 16px;
   }
 }
